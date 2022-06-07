@@ -52,12 +52,12 @@ class Plugin extends Bot {
     > <font color="info">气压：${data.result.realtime.pressure.trim()}</font>
     > <font color="info">空气质量（PM25）：${data.result.realtime.air_quality.pm25.trim()}</font>
     > <font color="info">空气质量（PM10）：${data.result.realtime.air_quality.pm10.trim()}</font>
-    > <font color="info">相对湿度：${data.result.realtime.humidity.trim()}&&'%'</font>
+    > <font color="info">相对湿度：${data.result.realtime.humidity.trim()}</font>
     > <font color="info">风向：${data.result.realtime.wind.direction.trim()}</font>
     > <font color="info">风速：${data.result.realtime.wind.speed.trim()}</font>
     **🌝实时刷新天气预报**
     > <font color="warning">分钟级预报：${data.result.minutely.description.trim()}</font>
-    > <font color="warning">降雨概率：${data.result.minutely.probability.trim()}*100&&'%'</font>
+    > <font color="warning">降雨概率：${data.result.minutely.probability.trim()}</font>
     **🌝小时级别天气预报**
     > <font color="info">${data.result.hourly.description.trim()}</font>
     ${alert_md}`);
