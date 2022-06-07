@@ -26,7 +26,7 @@ class Plugin extends Bot {
     _gps.map(async gps => {
       const tmp = gps.split('@');
       //对接weatherAPI接口
-      const api = `https://api.caiyunapp.com/v2.6/${this.API_KEY}/${tmp[0]}/weather.json?alert=true`;
+      const api = `https://api.caiyunapp.com/v2.5/${this.API_KEY}/${tmp[0]}/weather.json?alert=true`;
       //获取weather.json内的API信息写入data中
       await axios.get(api).then(async res => {
         const { data } = res;
@@ -46,18 +46,18 @@ class Plugin extends Bot {
     }
     await this.sendMarkdown(`
     **🌞源哥来报道！！**
-    > <font color="info">预报地点：${addr || ''}</font>
-    > <font color="info">气温：${data.result.realtime.temperature.trim()}</font>
-    > <font color="info">体感温度：${data.result.realtime.apparent_temperature.trim()}</font>
-    > <font color="info">气压：${data.result.realtime.pressure.trim()}</font>
-    > <font color="info">空气质量（PM25）：${data.result.realtime.air_quality.pm25.trim()}</font>
-    > <font color="info">空气质量（PM10）：${data.result.realtime.air_quality.pm10.trim()}</font>
-    > <font color="info">相对湿度：${data.result.realtime.humidity.trim()}</font>
-    > <font color="info">风向：${data.result.realtime.wind.direction.trim()}</font>
-    > <font color="info">风速：${data.result.realtime.wind.speed.trim()}</font>
+    > 预报地点：<font color="info">${addr || ''}</font>
+    > 气温：<font color="info">${data.result.realtime.temperature.trim()}</font>
+    > 体感温度：<font color="info">${data.result.realtime.apparent_temperature.trim()}</font>
+    > 气压：<font color="info">${data.result.realtime.pressure.trim()}</font>
+    > 空气质量（PM25）：<font color="info">${data.result.realtime.air_quality.pm25.trim()}</font>
+    > 空气质量（PM10）：<font color="info">${data.result.realtime.air_quality.pm10.trim()}</font>
+    > 相对湿度：<font color="info">${data.result.realtime.humidity.trim()}</font>
+    > 风向：<font color="info">${data.result.realtime.wind.direction.trim()}</font>
+    > 风速：<font color="info">${data.result.realtime.wind.speed.trim()}</font>
     **🌝实时刷新天气预报**
-    > <font color="warning">分钟级预报：${data.result.minutely.description.trim()}</font>
-    > <font color="warning">降雨概率：${data.result.minutely.probability.trim()}</font>
+    > 分钟级预报：<font color="warning">${data.result.minutely.description.trim()}</font>
+    > 降雨概率：<font color="warning">${data.result.minutely.probability.trim()}</font>
     **🌝小时级别天气预报**
     > <font color="info">${data.result.hourly.description.trim()}</font>
     ${alert_md}`);
