@@ -55,11 +55,6 @@ class Plugin extends Bot {
     > 相对湿度：<font color="info">${data.result.realtime.humidity.trim()}</font>
     > 风向：<font color="info">${data.result.realtime.wind.direction.trim()}</font>
     > 风速：<font color="info">${data.result.realtime.wind.speed.trim()}</font>
-    **🌝实时刷新天气预报**
-    > 分钟级预报：<font color="warning">${data.result.minutely.description.trim()}</font>
-    > 降雨概率：<font color="warning">${data.result.minutely.probability.trim()}</font>
-    **🌝小时级别天气预报**
-    > <font color="info">${data.result.hourly.description.trim()}</font>
     ${alert_md}`);
   }
 }
