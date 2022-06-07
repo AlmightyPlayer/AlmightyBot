@@ -34,27 +34,118 @@ class Plugin extends Bot {
       })
     });
   }
-  //向企业微信发送消息主题
+  //预警信息
   async _sendData (data, addr = '') {
     // 预警信息
     let alert_md = '';
     if (data.result.alert.content.length > 0) {
-      alert_md += '⏰ 实时天气预报 ⏰ \n';
+      alert_md += '⏰ 预警信息 ⏰ \n';
       data.result.alert.content.map(a => {
         alert_md += `**${a.title}**\n> <font color="comment">${a.description}</font>\n\n`;
       });
     }
+    
+  //风力判断
+  async _sendData (data, addr = '') {
+    // 风力判断
+    let wind_power = '';
+    if (data.result.realtime.wind.speed <= 1) {
+      wind_power += '0 级无风 \n';
+    elif(data.result.realtime.wind.speed > 1 and data.result.realtime.wind.speed <= 5)
+      wind_power += '1 级微风徐徐 \n';
+    elif(data.result.realtime.wind.speed > 5 and data.result.realtime.wind.speed <= 11)
+      wind_power += '2 级清风 \n';
+    elif(data.result.realtime.wind.speed > 11 and data.result.realtime.wind.speed <= 19)
+      wind_power += '3 级树叶摇摆 \n';
+    elif(data.result.realtime.wind.speed > 19 and data.result.realtime.wind.speed <= 28)
+      wind_power += '4 级树枝摇动 \n';
+    elif(data.result.realtime.wind.speed > 28 and data.result.realtime.wind.speed <= 38)
+      wind_power += '5 级风力强劲 \n';
+    elif(data.result.realtime.wind.speed > 38 and data.result.realtime.wind.speed <= 49)
+      wind_power += '6 级风力强劲 \n';
+    elif(data.result.realtime.wind.speed > 49 and data.result.realtime.wind.speed <= 61)
+      wind_power += '7 级风力超强 \n';
+    elif(data.result.realtime.wind.speed > 61 and data.result.realtime.wind.speed <= 74)
+      wind_power += '8 级狂风大作 \n';
+    elif(data.result.realtime.wind.speed > 74 and data.result.realtime.wind.speed <= 88)
+      wind_power += '9 级狂风呼啸 \n';
+    elif(data.result.realtime.wind.speed > 88 and data.result.realtime.wind.speed <= 102)
+      wind_power += '10 级暴风毁树 \n';
+    elif(data.result.realtime.wind.speed > 102 and data.result.realtime.wind.speed <= 117)
+      wind_power += '11 级暴风毁树 \n';
+    elif(data.result.realtime.wind.speed > 117 and data.result.realtime.wind.speed <= 133)
+      wind_power += '12 级飓风 \n';
+    elif(data.result.realtime.wind.speed > 133 and data.result.realtime.wind.speed <= 149)
+      wind_power += '13 级台风 \n';
+    elif(data.result.realtime.wind.speed > 149 and data.result.realtime.wind.speed <= 166)
+      wind_power += '14 级强台风 \n';
+    elif(data.result.realtime.wind.speed > 166 and data.result.realtime.wind.speed <= 183)
+      wind_power += '15 级强台风 \n';
+    elif(data.result.realtime.wind.speed > 183 and data.result.realtime.wind.speed <= 201)
+      wind_power += '16 级超强台风 \n';
+    elif(data.result.realtime.wind.speed > 201 and data.result.realtime.wind.speed <= 220)
+      wind_power += '17 级超强台风 \n';
+    else
+      wind_power += '这个风力已经超出了源哥的认知- -！ \n';
+    }
+
+  //风向判断
+  async _sendData (data, addr = '') {
+    // 风向判断
+    let wind_power = '';
+    if (data.result.realtime.wind.speed <= 1) {
+      wind_power += '0 级无风 \n';
+    elif(data.result.realtime.wind.speed > 1 and data.result.realtime.wind.speed <= 5)
+      wind_power += '1 级微风徐徐 \n';
+    elif(data.result.realtime.wind.speed > 5 and data.result.realtime.wind.speed <= 11)
+      wind_power += '2 级清风 \n';
+    elif(data.result.realtime.wind.speed > 11 and data.result.realtime.wind.speed <= 19)
+      wind_power += '3 级树叶摇摆 \n';
+    elif(data.result.realtime.wind.speed > 19 and data.result.realtime.wind.speed <= 28)
+      wind_power += '4 级树枝摇动 \n';
+    elif(data.result.realtime.wind.speed > 28 and data.result.realtime.wind.speed <= 38)
+      wind_power += '5 级风力强劲 \n';
+    elif(data.result.realtime.wind.speed > 38 and data.result.realtime.wind.speed <= 49)
+      wind_power += '6 级风力强劲 \n';
+    elif(data.result.realtime.wind.speed > 49 and data.result.realtime.wind.speed <= 61)
+      wind_power += '7 级风力超强 \n';
+    elif(data.result.realtime.wind.speed > 61 and data.result.realtime.wind.speed <= 74)
+      wind_power += '8 级狂风大作 \n';
+    elif(data.result.realtime.wind.speed > 74 and data.result.realtime.wind.speed <= 88)
+      wind_power += '9 级狂风呼啸 \n';
+    elif(data.result.realtime.wind.speed > 88 and data.result.realtime.wind.speed <= 102)
+      wind_power += '10 级暴风毁树 \n';
+    elif(data.result.realtime.wind.speed > 102 and data.result.realtime.wind.speed <= 117)
+      wind_power += '11 级暴风毁树 \n';
+    elif(data.result.realtime.wind.speed > 117 and data.result.realtime.wind.speed <= 133)
+      wind_power += '12 级飓风 \n';
+    elif(data.result.realtime.wind.speed > 133 and data.result.realtime.wind.speed <= 149)
+      wind_power += '13 级台风 \n';
+    elif(data.result.realtime.wind.speed > 149 and data.result.realtime.wind.speed <= 166)
+      wind_power += '14 级强台风 \n';
+    elif(data.result.realtime.wind.speed > 166 and data.result.realtime.wind.speed <= 183)
+      wind_power += '15 级强台风 \n';
+    elif(data.result.realtime.wind.speed > 183 and data.result.realtime.wind.speed <= 201)
+      wind_power += '16 级超强台风 \n';
+    elif(data.result.realtime.wind.speed > 201 and data.result.realtime.wind.speed <= 220)
+      wind_power += '17 级超强台风 \n';
+    else
+      wind_power += '这个风力已经超出了源哥的认知- -！ \n';
+    }
+
     await this.sendMarkdown(`
     **🌞源哥来报道！！**
     > 预报地点：<font color="info">${addr || ''}</font>
-    > 气温：<font color="info">${data.result.realtime.temperature}</font>
-    > 体感温度：<font color="info">${data.result.realtime.apparent_temperature}</font>
-    > 气压：<font color="info">${data.result.realtime.pressure}</font>
-    > 空气质量（PM25）：<font color="info">${data.result.realtime.air_quality.pm25}</font>
+    > 气温：<font color="info">${data.result.realtime.temperature}</font>℃
+    > 体感温度：<font color="info">${data.result.realtime.apparent_temperature}</font>℃
+    > 气压：<font color="info">${data.result.realtime.pressure}/100</font>hPa
+    > 空气质量（PM2.5）：<font color="info">${data.result.realtime.air_quality.pm25}</font>
+    > (PM2.5是指大气中直径小于或等于2.5微米的颗粒物，也称为可入肺颗粒物。被吸入人体后会直接进入支气管，干扰肺部的气体交换，引发包括哮喘、支气管炎和心血管病等方面的疾病。)
     > 空气质量（PM10）：<font color="info">${data.result.realtime.air_quality.pm10}</font>
-    > 相对湿度：<font color="info">${data.result.realtime.humidity}</font>
+    > (PM10是直径小于等于10微米的可吸入颗粒物，能够进入上呼吸道，但部分可通过痰液等排出体外，另外也会被鼻腔内部的绒毛阻挡，对人体健康危害相对较小。)
+    > 相对湿度：<font color="info">${data.result.realtime.humidity}*100</font>%
     > 风向：<font color="info">${data.result.realtime.wind.direction}</font>
-    > 风速：<font color="info">${data.result.realtime.wind.speed}</font>
+    > 风速：<font color="info">${wind_power}</font>
     
     **降雨提醒：**
     > <font color="warning">${data.result.minutely.description.trim()}</font>
