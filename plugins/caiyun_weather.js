@@ -47,14 +47,21 @@ class Plugin extends Bot {
     await this.sendMarkdown(`
     **🌞源哥来报道！！**
     > 预报地点：<font color="info">${addr || ''}</font>
-    > 气温：<font color="info">${data.result.realtime.temperature.trim()}</font>
-    > 体感温度：<font color="info">${data.result.realtime.apparent_temperature.trim()}</font>
-    > 气压：<font color="info">${data.result.realtime.pressure.trim()}</font>
-    > 空气质量（PM25）：<font color="info">${data.result.realtime.air_quality.pm25.trim()}</font>
-    > 空气质量（PM10）：<font color="info">${data.result.realtime.air_quality.pm10.trim()}</font>
-    > 相对湿度：<font color="info">${data.result.realtime.humidity.trim()}</font>
-    > 风向：<font color="info">${data.result.realtime.wind.direction.trim()}</font>
-    > 风速：<font color="info">${data.result.realtime.wind.speed.trim()}</font>
+    > 气温：<font color="info">${data.result.realtime.temperature}</font>
+    > 体感温度：<font color="info">${data.result.realtime.apparent_temperature}</font>
+    > 气压：<font color="info">${data.result.realtime.pressure}</font>
+    > 空气质量（PM25）：<font color="info">${data.result.realtime.air_quality.pm25}</font>
+    > 空气质量（PM10）：<font color="info">${data.result.realtime.air_quality.pm10}</font>
+    > 相对湿度：<font color="info">${data.result.realtime.humidity}</font>
+    > 风向：<font color="info">${data.result.realtime.wind.direction}</font>
+    > 风速：<font color="info">${data.result.realtime.wind.speed}</font>
+    
+    **降雨提醒：**
+    > <font color="warning">${data.result.minutely.description.trim()}</font>
+    
+    **天气预报：**
+    > <font color="info">${data.result.hourly.description.trim()}</font>
+    
     ${alert_md}`);
   }
 }
