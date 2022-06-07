@@ -71,7 +71,7 @@ class Plugin extends Bot {
   }
   
   //向企业微信发送消息主题
-  async _sendData (weatherapidata, addr = '') {
+  async _sendData (weatherdata, addr = '') {
     // 预警信息
     let alert_md = '';
     if (weatherdata.result.alert.content.length > 0) {
