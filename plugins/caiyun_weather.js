@@ -36,18 +36,18 @@ class Plugin extends Bot {
     // 预警信息
     let alert_md = '';
     if (data.result.alert.content.length > 0) {
-      alert_md += '天气预警 ⚠\n';
+      alert_md += '⏰ 实时天气预报 ⏰ \n';
       data.result.alert.content.map(a => {
         alert_md += `**${a.title}**\n> <font color="comment">${a.description}</font>\n\n`;
       });
     }
     await this.sendMarkdown(`
-彩云天气 🌤 <font color="info">${addr || ''}</font>
+🌞 源哥天气预报 🌞  <font color="info">${addr || ''}</font>
 
-**降雨提醒：**
+**🌧降雨提醒🌧：**
 > <font color="warning">${data.result.minutely.description.trim()}</font>
 
-**天气预报：**
+**🌝 预报信息 🌝：**
 > <font color="info">${data.result.hourly.description.trim()}</font>
 
 ${alert_md}`);
