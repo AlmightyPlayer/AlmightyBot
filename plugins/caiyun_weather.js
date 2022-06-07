@@ -74,9 +74,9 @@ class Plugin extends Bot {
   async _sendData (weatherapidata, addr = '') {
     // 预警信息
     let alert_md = '';
-    if (weatherapidata.result.alert.content.length > 0) {
+    if (weatherdata.result.alert.content.length > 0) {
       alert_md += '⏰ 实时天气预报 ⏰ \n';
-      weatherapidata.result.alert.content.map(a => {
+      weatherdata.result.alert.content.map(a => {
         alert_md += `**${a.title}**\n> <font color="comment">${a.description}</font>\n\n`;
       });
     }
@@ -89,13 +89,13 @@ class Plugin extends Bot {
     > <font color="info">预报地点：${addr || ''}</font>
 //体感温度提醒
     🌡 体感温度提醒 🌡**
-    > <font color="info">${weatherapidata.result.hourly.description.trim()}</font>
+    > <font color="info">${weatherdata.result.hourly.description.trim()}</font>
 //降雨提醒
     **🌧降雨提醒🌧**
-    > <font color="warning">${weatherapidata.result.minutely.description.trim()}</font>
+    > <font color="warning">${weatherdata.result.minutely.description.trim()}</font>
 //具体预报信息
     **🌝预报信息🌝**
-    > <font color="info">${weatherapidata.result.hourly.description.trim()}</font>
+    > <font color="info">${weatherdata.result.hourly.description.trim()}</font>
     ${alert_md}`);
   }
 }
