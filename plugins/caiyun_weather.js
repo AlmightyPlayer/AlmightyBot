@@ -69,7 +69,12 @@ class Plugin extends Bot {
     > <font color="info">${data.result.hourly.description.trim()}</font>
     
     🌝日级天气预报**
-    > <font color="info">${data.result.daily.description.trim()}</font>
+    > <font color="info">全天主要天气：${data.result.daily.skycon.value.trim()}</font>**
+    > <font color="info">白天主要天气：${data.result.daily.skycon_08h_20h.value.trim()}</font>**
+    > <font color="info">夜间主要天气：${data.result.daily.skycon_20h_32h.value.trim()}</font>**
+    > <font color="info">夜间主要天气：${data.result.daily.skycon_20h_32h.value.trim()}</font>
+    
+    
     
     ${alert_md}`);
   }
