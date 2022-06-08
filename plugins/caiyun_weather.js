@@ -37,7 +37,7 @@ class Plugin extends Bot {
 		});
 
 		//预警信息+风力判断+风向判断
-		async _sendData (data, addr = ``) {
+		async _sendData (data, addr = '') {
 			// 预警信息
 			let alert_md = '';
 			if (data.result.alert.content.length > 0) {
@@ -47,7 +47,7 @@ class Plugin extends Bot {
 				});
 			};
 			// 风力判断
-			let wind_power = '';
+			var wind_power = '';
 			if (data.result.realtime.wind.speed <= 1) {
 				wind_power = '0 级无风 \n';
 			}else if(data.result.realtime.wind.speed > 1 and $data.result.realtime.wind.speed <= 5){
@@ -88,7 +88,7 @@ class Plugin extends Bot {
 				wind_power = '这个风力已经超出了源哥的认知- -！ \n';
 			};
 			// 风向判断
-			let wind_direction = '';
+			var wind_direction = '';
 			if (data.result.realtime.wind.direction >= 348.76 or data.result.realtime.wind.direction <= 11.25){
 				wind_direction = '北风 \n';
 			}else if(data.result.realtime.wind.direction > 11.25 and data.result.realtime.wind.direction <= 33.75){
