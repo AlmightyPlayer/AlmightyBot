@@ -8,7 +8,12 @@ class Plugin extends Bot {
     super();
   }
   async run () {
-    const now = new Date().Format('M/d h+8:m:s');
+    //目标时区时间，东八区
+    var nowHour = new Date().getHours();
+    var targetDate = new Date(nowHour += 8);
+    return new $Date(targetDate);
+    console.log('现在是北京时间：$now')
+    const now = new Date().Format('M/d h:m:s');
     // await this.sendImage('assets/geekbot.png');
     // 发送环境配置信息
     const CONF_DATA = `
