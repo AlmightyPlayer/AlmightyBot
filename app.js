@@ -8,10 +8,6 @@ class Plugin extends Bot {
     super();
   }
   async run () {
-    //目标时区时间，东八区
-    const nowHour = new Date().getHours();
-    const targetHour = new Date().getHours(nowHour += 8);
-    return new $Date().getHours(targetDate);
     const now = new Date().Format('M/d h:m:s');
     // await this.sendImage('assets/geekbot.png');
     // 发送环境配置信息
