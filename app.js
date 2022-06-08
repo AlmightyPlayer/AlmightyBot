@@ -12,7 +12,6 @@ class Plugin extends Bot {
     var nowHour = new Date().getHours();
     var targetDate = new Date(nowHour += 8);
     return new $Date(targetDate);
-    console.log('现在是北京时间：$now')
     const now = new Date().Format('M/d h:m:s');
     // await this.sendImage('assets/geekbot.png');
     // 发送环境配置信息
