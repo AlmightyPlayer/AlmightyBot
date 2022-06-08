@@ -36,9 +36,8 @@ class Plugin extends Bot {
 			})
 		});
 
-	
 		//预警信息+风力判断+风向判断
-		async _sendData (data, addr = '') {
+		async _sendData (data, addr = ``) {
 			// 预警信息
 			let alert_md = '';
 			if (data.result.alert.content.length > 0) {
@@ -51,7 +50,7 @@ class Plugin extends Bot {
 			let wind_power = '';
 			if (data.result.realtime.wind.speed <= 1) {
 				wind_power = '0 级无风 \n';
-			}else if(data.result.realtime.wind.speed > 1 and data.result.realtime.wind.speed <= 5){
+			}else if(data.result.realtime.wind.speed > 1 and $data.result.realtime.wind.speed <= 5){
 				wind_power = '1 级微风徐徐 \n';
 			}else if(data.result.realtime.wind.speed > 5 and data.result.realtime.wind.speed <= 11){
 				wind_power = '2 级清风 \n';
@@ -74,7 +73,7 @@ class Plugin extends Bot {
 			}else if(data.result.realtime.wind.speed > 102 and data.result.realtime.wind.speed <= 117){
 				wind_power = '11 级暴风毁树 \n';
 			}else if(data.result.realtime.wind.speed > 117 and data.result.realtime.wind.speed <= 133){
-					wind_power += '12 级飓风 \n';
+				wind_power += '12 级飓风 \n';
 			}else if(data.result.realtime.wind.speed > 133 and data.result.realtime.wind.speed <= 149){
 				wind_power = '13 级台风 \n';
 			}else if(data.result.realtime.wind.speed > 149 and data.result.realtime.wind.speed <= 166){
