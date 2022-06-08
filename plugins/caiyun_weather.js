@@ -20,6 +20,8 @@ class Plugin extends Bot {
 		this.API_KEY = caiyun_key;
 		this.GPS = caiyun_gps;
 	}
+	
+	// 判断是否是多gps、获取api、缓存api数据
 	async run () {
 		// 判断是否是多gps
 		const _gps = this.GPS.split('|');
@@ -33,10 +35,10 @@ class Plugin extends Bot {
 				await this._sendData(data, tmp[1]);
 			})
 		});
-	};
+
 	
-	//预警信息
-	async _sendData (data, addr = '') {
+		//预警信息+风力判断+风向判断
+		async _sendData (data, addr = '') {
 		// 预警信息
 		let alert_md = '';
 		if (data.result.alert.content.length > 0) {
@@ -45,7 +47,6 @@ class Plugin extends Bot {
 				alert_md += `**${a.title}**\n> <font color="comment">${a.description}</font>\n\n`;
 			});
 		};
-		
 		// 风力判断
 		let wind_power = '';
 		if (data.result.realtime.wind.speed <= 1) {
@@ -87,7 +88,6 @@ class Plugin extends Bot {
 		}else{
 			wind_power += '这个风力已经超出了源哥的认知- -！ \n';
 		};
-		
 		// 风向判断
 		let wind_direction = '';
 		if (data.result.realtime.wind.direction >= 348.76 or data.result.realtime.wind.direction <= 11.25){
@@ -127,27 +127,28 @@ class Plugin extends Bot {
 		};
 	};
 	
-	await this.sendMarkdown(`
-	**🌞源哥来报道！！**
-	> 预报地点：<font color="info">${addr || ''}</font>
-	> 气温：<font color="info">${data.result.realtime.temperature}</font>℃
-	> 体感温度：<font color="info">${data.result.realtime.apparent_temperature}</font>℃
-	> 气压：<font color="info">${data.result.realtime.pressure}/100</font>hPa
-	> 空气质量（PM2.5）：<font color="info">${data.result.realtime.air_quality.pm25}</font>
-	> (PM2.5是指大气中直径小于或等于2.5微米的颗粒物，也称为可入肺颗粒物。被吸入人体后会直接进入支气管，干扰肺部的气体交换，引发包括哮喘、支气管炎和心血管病等方面的疾病。)
-	> 空气质量（PM10）：<font color="info">${data.result.realtime.air_quality.pm10}</font>
-	> (PM10是直径小于等于10微米的可吸入颗粒物，能够进入上呼吸道，但部分可通过痰液等排出体外，另外也会被鼻腔内部的绒毛阻挡，对人体健康危害相对较小。)
-	> 相对湿度：<font color="info">${data.result.realtime.humidity}*100</font>%
-	> 风向：<font color="info">${wind_direction}</font>
-	> 风速：<font color="info">${wind_power}</font>
+		await this.sendMarkdown(`
+		**🌞源哥来报道！！**
+		> 预报地点：<font color="info">${addr || ''}</font>
+		> 气温：<font color="info">${data.result.realtime.temperature}</font>℃
+		> 体感温度：<font color="info">${data.result.realtime.apparent_temperature}</font>℃
+		> 气压：<font color="info">${data.result.realtime.pressure}/100</font>hPa
+		> 空气质量（PM2.5）：<font color="info">${data.result.realtime.air_quality.pm25}</font>
+		> (PM2.5是指大气中直径小于或等于2.5微米的颗粒物，也称为可入肺颗粒物。被吸入人体后会直接进入支气管，干扰肺部的气体交换，引发包括哮喘、支气管炎和心血管病等方面的疾病。)
+		> 空气质量（PM10）：<font color="info">${data.result.realtime.air_quality.pm10}</font>
+		> (PM10是直径小于等于10微米的可吸入颗粒物，能够进入上呼吸道，但部分可通过痰液等排出体外，另外也会被鼻腔内部的绒毛阻挡，对人体健康危害相对较小。)
+		> 相对湿度：<font color="info">${data.result.realtime.humidity}*100</font>%
+		> 风向：<font color="info">${wind_direction}</font>
+		> 风速：<font color="info">${wind_power}</font>
 	
-	**降雨提醒：**
-	> <font color="warning">${data.result.minutely.description.trim()}</font>
+		**降雨提醒：**
+		> <font color="warning">${data.result.minutely.description.trim()}</font>
 	
-	**天气预报：**
-	> <font color="info">${data.result.hourly.description.trim()}</font>
+		**天气预报：**
+		> <font color="info">${data.result.hourly.description.trim()}</font>
 	
-	${alert_md}`);
+		${alert_md}`);
+	};
 };
 
 new Plugin().run()
