@@ -43,10 +43,6 @@ class Plugin extends Bot {
       data.result.alert.content.map(a => {
         alert_md += `**${a.title}**\n> <font color="comment">${a.description}</font>\n\n`;
       });
-    }
-    
-  //风力判断
-  async _sendData (data, addr = '') {
     // 风力判断
     let wind_power = '';
     if (data.result.realtime.wind.speed <= 1) {
@@ -88,14 +84,10 @@ class Plugin extends Bot {
     else
       wind_power += '这个风力已经超出了源哥的认知- -！ \n';
     }
-
-  //风向判断
-  async _sendData (data, addr = '') {
     // 风向判断
     let wind_direction = '';
     if (data.result.realtime.wind.direction >= 348.76 or data.result.realtime.wind.direction <= 11.25) {
       wind_direction += '北风 \n';
-
     elif(data.result.realtime.wind.direction > 11.25 and data.result.realtime.wind.direction <= 33.75)
       wind_direction += '北东北 \n';
     elif(data.result.realtime.wind.direction > 33.75 and data.result.realtime.wind.direction <= 56.25)
@@ -129,7 +121,8 @@ class Plugin extends Bot {
     else
       wind_direction += '这个风向已经超出了源哥的认知- -！ \n';
     }
-
+  }
+    
     await this.sendMarkdown(`
     **🌞源哥来报道！！**
     > 预报地点：<font color="info">${addr || ''}</font>
