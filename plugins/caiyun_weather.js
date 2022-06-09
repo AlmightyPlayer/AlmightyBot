@@ -80,46 +80,79 @@ class Plugin extends Bot {
 			}else if(data.result.realtime.wind.speed > 201 && data.result.realtime.wind.speed <= 220){
 				wind_power = '17 级超强台风 \n';
 			}else{
-				wind_power = '这个风力已经超出了源哥的认知- -！ \n';
+				wind_power = '这个风力已经超出了源哥的认知了- -！ \n';
 			}
 			// 风向判断
 			var wind_direction = '';
 			if (data.result.realtime.wind.direction >= 348.76 || data.result.realtime.wind.direction <= 11.25){
-				wind_direction = '北风 \n';
+				wind_direction = '北风';
 			}else if(data.result.realtime.wind.direction > 11.25 && data.result.realtime.wind.direction <= 33.75){
-				wind_direction = '北东北 \n';
+				wind_direction = '北东北风';
 			}else if(data.result.realtime.wind.direction > 33.75 && data.result.realtime.wind.direction <= 56.25){
-				wind_direction = '东北 \n';
+				wind_direction = '东北风';
 			}else if(data.result.realtime.wind.direction > 56.25 && data.result.realtime.wind.direction <= 78.75){
-				wind_direction = '东东北 \n';
+				wind_direction = '东东北风';
 			}else if(data.result.realtime.wind.direction > 78.75 && data.result.realtime.wind.direction <= 101.25){
-				wind_direction = '东 \n';
+				wind_direction = '东风';
 			}else if(data.result.realtime.wind.direction > 101.25 && data.result.realtime.wind.direction <= 123.75){
-				wind_direction = '东东南 \n';
+				wind_direction = '东东南风';
 			}else if(data.result.realtime.wind.direction > 123.75 && data.result.realtime.wind.direction <= 146.25){
-				wind_direction = '东南 \n';
+				wind_direction = '东南风';
 			}else if(data.result.realtime.wind.direction > 146.25 && data.result.realtime.wind.direction <= 168.75){
-				wind_direction = '南东南 \n';
+				wind_direction = '南东南风';
 			}else if(data.result.realtime.wind.direction > 168.75 && data.result.realtime.wind.direction <= 191.25){
-				wind_direction = '南 \n';
+				wind_direction = '南风';
 			}else if(data.result.realtime.wind.direction > 191.25 && data.result.realtime.wind.direction <= 213.75){
-				wind_direction = '南西南 \n';
+				wind_direction = '南西南风';
 			}else if(data.result.realtime.wind.direction > 213.75 && data.result.realtime.wind.direction <= 236.25){
-				wind_direction = '西南 \n';
+				wind_direction = '西南风';
 			}else if(data.result.realtime.wind.direction > 236.25 && data.result.realtime.wind.direction <= 258.75){
-				wind_direction = '西西南 \n';
+				wind_direction = '西西南风';
 			}else if(data.result.realtime.wind.direction > 258.75 && data.result.realtime.wind.direction <= 281.25){
-				wind_direction = '西 \n';
+				wind_direction = '西风';
 			}else if(data.result.realtime.wind.direction > 281.25 && data.result.realtime.wind.direction <= 303.75){
-				wind_direction = '西西北 \n';
+				wind_direction = '西西北风';
 			}else if(data.result.realtime.wind.direction > 303.75 && data.result.realtime.wind.direction <= 328.25){
-				wind_direction = '西北 \n';
+				wind_direction = '西北风';
 			}else if(data.result.realtime.wind.direction > 326.25 && data.result.realtime.wind.direction <= 348.75){
-				wind_direction = '北西北 \n';
+				wind_direction = '北西北风';
 			}else{
-				wind_direction = '这个风向已经超出了源哥的认知- -！ \n';
+				wind_direction = '这个风向已经超出了源哥的认知了- -！ \n';
 			}
-	  
+	  		//空气质量PM2.5
+	  		var air_AQI25 = '';
+	  		if (data.result.realtime.air_quality.pm25 <= 50){
+				air_AQI25 = '优';
+			}else if data.result.realtime.air_quality.pm25 > 50 && data.result.realtime.air_quality.pm25 <= 100){
+				air_AQI25 = '良';
+			}else if data.result.realtime.air_quality.pm25 > 100 && data.result.realtime.air_quality.pm25 <= 150){
+				air_AQI25 = '轻度污染';
+			}else if data.result.realtime.air_quality.pm25 > 150 && data.result.realtime.air_quality.pm25 <= 200){
+				air_AQI25 = '中度污染';
+			}else if data.result.realtime.air_quality.pm25 > 200 && data.result.realtime.air_quality.pm25 <= 300){
+				air_AQI25 = '重度污染';
+			}else if data.result.realtime.air_quality.pm25 > 300){
+				air_AQI25 = '严重污染';
+			}else{
+				air_AQI25 = '这个空气质量已经超出了源哥的认知了- -！ \n';
+			}
+	  		//空气质量PM10
+	  		var air_AQI10 = '';
+	  		if (data.result.realtime.air_quality.pm10 <= 50){
+				air_AQI10 = '优';
+			}else if data.result.realtime.air_quality.pm10 > 50 && data.result.realtime.air_quality.pm10 <= 100){
+				air_AQI10 = '良';
+			}else if data.result.realtime.air_quality.pm10 > 100 && data.result.realtime.air_quality.pm10 <= 150){
+				air_AQI10 = '轻度污染';
+			}else if data.result.realtime.air_quality.pm10 > 150 && data.result.realtime.air_quality.pm10 <= 200){
+				air_AQI10 = '中度污染';
+			}else if data.result.realtime.air_quality.pm10 > 200 && data.result.realtime.air_quality.pm10 <= 300){
+				air_AQI10 = '重度污染';
+			}else if data.result.realtime.air_quality.pm10 > 300){
+				air_AQI10 = '严重污染';
+			}else{
+				air_AQI10 = '这个空气质量已经超出了源哥的认知了- -！ \n';
+			}
     await this.sendMarkdown(`
 🌞源哥来报道天气啦！！ 🌤 
 
@@ -127,12 +160,10 @@ class Plugin extends Bot {
 
 > 气温：<font color="info">${data.result.realtime.temperature}</font>℃
 > 体感温度：<font color="info">${data.result.realtime.apparent_temperature}</font>℃
-> 气压：<font color="info">${data.result.realtime.pressure}/100</font>hPa
-> 空气质量（PM2.5）：<font color="info">${data.result.realtime.air_quality.pm25}</font>
-> (PM2.5是指大气中直径小于或等于2.5微米的颗粒物，也称为可入肺颗粒物。被吸入人体后会直接进入支气管，干扰肺部的气体交换，引发包括哮喘、支气管炎和心血管病等方面的疾病。)
-> 空气质量（PM10）：<font color="info">${data.result.realtime.air_quality.pm10}</font>
-> (PM10是直径小于等于10微米的可吸入颗粒物，能够进入上呼吸道，但部分可通过痰液等排出体外，另外也会被鼻腔内部的绒毛阻挡，对人体健康危害相对较小。)
-> 相对湿度：<font color="info">${data.result.realtime.humidity}*100</font>%
+> 气压：<font color="info">${data.result.realtime.pressure/100}</font>hPa
+> 空气质量PM2.5：<font color="info">${data.result.realtime.air_quality.pm25}μg/m³ ${air_AQI25}</font>
+> 空气质量PM10：<font color="info">${data.result.realtime.air_quality.pm10}μg/m³ ${air_AQI10}</font>
+> 相对湿度：<font color="info">${data.result.realtime.humidity*100}</font>%
 > 风向：<font color="info">${wind_direction}</font>
 > 风速：<font color="info">${wind_power}</font>
 
