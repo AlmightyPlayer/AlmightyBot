@@ -45,7 +45,7 @@ class Plugin extends Bot {
 			var wind_power = '';
 			if (data.result.realtime.wind.speed <= 1) {
 				wind_power = '0 级无风 \n';
-			}else if(data.result.realtime.wind.speed > 1 and $data.result.realtime.wind.speed <= 5){
+			}else if(data.result.realtime.wind.speed > 1 and data.result.realtime.wind.speed <= 5){
 				wind_power = '1 级微风徐徐 \n';
 			}else if(data.result.realtime.wind.speed > 5 and data.result.realtime.wind.speed <= 11){
 				wind_power = '2 级清风 \n';
