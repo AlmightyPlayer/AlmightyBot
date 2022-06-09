@@ -122,34 +122,34 @@ class Plugin extends Bot {
 	  		//空气质量PM2.5
 	  		var air_AQI25 = '';
 	  		if (data.result.realtime.air_quality.pm25 <= 50){
-				air_AQI25 = <font color="info">'优'</font>;
+				air_AQI25 = '<font color="info">优</font>';
 			}else if(data.result.realtime.air_quality.pm25 > 50 && data.result.realtime.air_quality.pm25 <= 100){
-				air_AQI25 = <font color="blue" size=4>'良'</font>;
+				air_AQI25 = '<font color="blue" size=4>良</font>';
 			}else if(data.result.realtime.air_quality.pm25 > 100 && data.result.realtime.air_quality.pm25 <= 150){
-				air_AQI25 = <font color="danger" size=5>'轻度污染'</font>;
+				air_AQI25 = '<font color="danger" size=5>轻度污染</font>';
 			}else if(data.result.realtime.air_quality.pm25 > 150 && data.result.realtime.air_quality.pm25 <= 200){
-				air_AQI25 = <font color="orange" size=6>'中度污染'</font>;
+				air_AQI25 = '<font color="orange" size=6>中度污染</font>';
 			}else if(data.result.realtime.air_quality.pm25 > 200 && data.result.realtime.air_quality.pm25 <= 300){
-				air_AQI25 = <font color="red" size=7>'重度污染'</font>;
+				air_AQI25 = '<font color="red" size=7>重度污染</font>';
 			}else if(data.result.realtime.air_quality.pm25 > 300){
-				air_AQI25 = <font color="red" size=8><b>'严重污染'</b></font>;
+				air_AQI25 = '<font color="red" size=8><b>严重污染</b></font>';
 			}else{
 				air_AQI25 = '这个空气质量已经超出了源哥的认知了- -！ \n';
 			}
 	  		//空气质量PM10
 	  		var air_AQI10 = '';
 	  		if (data.result.realtime.air_quality.pm10 <= 50){
-				air_AQI10 = <font color="info">'优'</font>;
+				air_AQI10 = '<font color="info">优</font>';
 			}else if(data.result.realtime.air_quality.pm10 > 50 && data.result.realtime.air_quality.pm10 <= 100){
-				air_AQI10 = <font color="blue" size=4>'良'</font>;
+				air_AQI10 = '<font color="blue" size=4>良</font>';
 			}else if(data.result.realtime.air_quality.pm10 > 100 && data.result.realtime.air_quality.pm10 <= 150){
-				air_AQI10 = <font color="danger" size=5>'轻度污染'</font>;
+				air_AQI10 = '<font color="danger" size=5>轻度污染</font>';
 			}else if(data.result.realtime.air_quality.pm10 > 150 && data.result.realtime.air_quality.pm10 <= 200){
-				air_AQI10 = <font color="orange" size=6>'中度污染'</font>;
+				air_AQI10 = '<font color="orange" size=6>中度污染</font>';
 			}else if(data.result.realtime.air_quality.pm10 > 200 && data.result.realtime.air_quality.pm10 <= 300){
-				air_AQI10 = <font color="red" size=7>'重度污染'</font>;
+				air_AQI10 = '<font color="red" size=7>重度污染</font>';
 			}else if(data.result.realtime.air_quality.pm10 > 300){
-				air_AQI10 = <font color="red" size=8><b>'严重污染'</b></font>;
+				air_AQI10 = '<font color="red" size=8><b>严重污染</b></font>';
 			}else{
 				air_AQI10 = '这个空气质量已经超出了源哥的认知了- -！ \n';
 			}
