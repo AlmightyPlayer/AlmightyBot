@@ -44,41 +44,41 @@ class Plugin extends Bot {
 			// 风力判断
 			var wind_power = '';
 			if (data.result.realtime.wind.speed <= 1) {
-				wind_power = <font color="info">'0 级无风</font> \n';
+				wind_power = '<font color="info">0 级无风</font> \n';
 			}else if(data.result.realtime.wind.speed > 1 && data.result.realtime.wind.speed <= 5){
-				wind_power = <font color="info">'1 级微风徐徐</font> \n';
+				wind_power = '<font color="info">1 级微风徐徐</font> \n';
 			}else if(data.result.realtime.wind.speed > 5 && data.result.realtime.wind.speed <= 11){
-				wind_power = <font color="info">'2 级清风</font> \n';
+				wind_power = '<font color="info">2 级清风</font> \n';
 			}else if(data.result.realtime.wind.speed > 11 && data.result.realtime.wind.speed <= 19){
-				wind_power = <font color="blue">'3 级树叶摇摆</font> \n';
+				wind_power = '<font color="blue">3 级树叶摇摆</font> \n';
 			}else if(data.result.realtime.wind.speed > 19 && data.result.realtime.wind.speed <= 28){
-				wind_power = <font color="blue">'4 级树枝摇动</font> \n';
+				wind_power = '<font color="blue">4 级树枝摇动</font> \n';
 			}else if(data.result.realtime.wind.speed > 28 && data.result.realtime.wind.speed <= 38){
-				wind_power = <font color="danger">'5 级风力强劲</font> \n';
+				wind_power = '<font color="danger">5 级风力强劲</font> \n';
 			}else if(data.result.realtime.wind.speed > 38 && data.result.realtime.wind.speed <= 49){
-				wind_power = <font color="danger">'6 级风力强劲</font> \n';
+				wind_power = '<font color="danger">6 级风力强劲</font> \n';
 			}else if(data.result.realtime.wind.speed > 49 && data.result.realtime.wind.speed <= 61){
-				wind_power = <font color="orange">'7 级风力超强</font> \n';
+				wind_power = '<font color="orange">7 级风力超强</font> \n';
 			}else if(data.result.realtime.wind.speed > 61 && data.result.realtime.wind.speed <= 74){
-				wind_power = <font color="red">'8 级狂风大作</font> \n';
+				wind_power = '<font color="red">8 级狂风大作</font> \n';
 			}else if(data.result.realtime.wind.speed > 74 && data.result.realtime.wind.speed <= 88){
-				wind_power = <font color="red" size=4>'9 级狂风呼啸</font> \n';
+				wind_power = '<font color="red" size=4>9 级狂风呼啸</font> \n';
 			}else if(data.result.realtime.wind.speed > 88 && data.result.realtime.wind.speed <= 102){
-				wind_power = <font color="red" size=5>'10 级暴风毁树</font> \n';
+				wind_power = '<font color="red" size=5>10 级暴风毁树</font> \n';
 			}else if(data.result.realtime.wind.speed > 102 && data.result.realtime.wind.speed <= 117){
-				wind_power = <font color="red" size=6>'11 级暴风毁树</font> \n';
+				wind_power = '<font color="red" size=6>11 级暴风毁树</font> \n';
 			}else if(data.result.realtime.wind.speed > 117 && data.result.realtime.wind.speed <= 133){
-				wind_power += <font color="red" size=7>'12 级飓风</font> \n';
+				wind_power += '<font color="red" size=7>12 级飓风</font> \n';
 			}else if(data.result.realtime.wind.speed > 133 && data.result.realtime.wind.speed <= 149){
-				wind_power = <font color="red" size=8>'13 级台风</font> \n';
+				wind_power = '<font color="red" size=8>13 级台风</font> \n';
 			}else if(data.result.realtime.wind.speed > 149 && data.result.realtime.wind.speed <= 166){
-				wind_power = <font color="red" size=9>'14 级强台风</font> \n';
+				wind_power = '<font color="red" size=9>14 级强台风</font> \n';
 			}else if(data.result.realtime.wind.speed > 166 && data.result.realtime.wind.speed <= 183){
-				wind_power = <font color="red" size=10>'15 级强台风</font> \n';
+				wind_power = '<font color="red" size=10>15 级强台风</font> \n';
 			}else if(data.result.realtime.wind.speed > 183 && data.result.realtime.wind.speed <= 201){
-				wind_power = <font color="red" size=11>'16 级超强台风</font> \n';
+				wind_power = '<font color="red" size=11>16 级超强台风</font> \n';
 			}else if(data.result.realtime.wind.speed > 201 && data.result.realtime.wind.speed <= 220){
-				wind_power = <font color="red" size=12><b>'17 级超强台风</b></font> \n';
+				wind_power = '<font color="red" size=12><b>17 级超强台风</b></font> \n';
 			}else{
 				wind_power = '这个风力已经超出了源哥的认知了- -！ \n';
 			}
