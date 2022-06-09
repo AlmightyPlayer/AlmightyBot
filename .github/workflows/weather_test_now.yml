@@ -1,6 +1,6 @@
 # 这是手动触发的基本工作流
 
-name: Manual workflow
+name: Manual workflow weather
 
 # 控制操作何时运行。使用UI手动触发时，工作流将运行
 # or API.
@@ -12,7 +12,7 @@ on:
         # 在UI中显示友好的描述，而不是“名称”
         description: '开始吗？'
         # 如果未明确提供值，则为默认值
-        default: '已运行！'
+        default: '开始！！'
         # 必须提供输入才能运行工作流
         required: true
 
