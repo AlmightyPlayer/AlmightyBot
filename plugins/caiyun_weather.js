@@ -62,23 +62,23 @@ class Plugin extends Bot {
 			}else if(data.result.realtime.wind.speed > 61 && data.result.realtime.wind.speed <= 74){
 				wind_power = '<font color="red">8 级狂风大作</font> \n';
 			}else if(data.result.realtime.wind.speed > 74 && data.result.realtime.wind.speed <= 88){
-				wind_power = '<font color="red" size=4>9 级狂风呼啸</font> \n';
+				wind_power = '<font color="red" size=19>9 级狂风呼啸</font> \n';
 			}else if(data.result.realtime.wind.speed > 88 && data.result.realtime.wind.speed <= 102){
-				wind_power = '<font color="red" size=5>10 级暴风毁树</font> \n';
+				wind_power = '<font color="red" size=20>10 级暴风毁树</font> \n';
 			}else if(data.result.realtime.wind.speed > 102 && data.result.realtime.wind.speed <= 117){
-				wind_power = '<font color="red" size=6>11 级暴风毁树</font> \n';
+				wind_power = '<font color="red" size=21>11 级暴风毁树</font> \n';
 			}else if(data.result.realtime.wind.speed > 117 && data.result.realtime.wind.speed <= 133){
-				wind_power += '<font color="red" size=7>12 级飓风</font> \n';
+				wind_power += '<font color="red" size=22>12 级飓风</font> \n';
 			}else if(data.result.realtime.wind.speed > 133 && data.result.realtime.wind.speed <= 149){
-				wind_power = '<font color="red" size=8>13 级台风</font> \n';
+				wind_power = '<font color="red" size=23>13 级台风</font> \n';
 			}else if(data.result.realtime.wind.speed > 149 && data.result.realtime.wind.speed <= 166){
-				wind_power = '<font color="red" size=9>14 级强台风</font> \n';
+				wind_power = '<font color="red" size=24>14 级强台风</font> \n';
 			}else if(data.result.realtime.wind.speed > 166 && data.result.realtime.wind.speed <= 183){
-				wind_power = '<font color="red" size=10>15 级强台风</font> \n';
+				wind_power = '<font color="red" size=25>15 级强台风</font> \n';
 			}else if(data.result.realtime.wind.speed > 183 && data.result.realtime.wind.speed <= 201){
-				wind_power = '<font color="red" size=11>16 级超强台风</font> \n';
+				wind_power = '<font color="red" size=26>16 级超强台风</font> \n';
 			}else if(data.result.realtime.wind.speed > 201 && data.result.realtime.wind.speed <= 220){
-				wind_power = '<font color="red" size=12><b>17 级超强台风</b></font> \n';
+				wind_power = '<font color="red" size=27>17 级超强台风</font> \n';
 			}else{
 				wind_power = '这个风力已经超出了源哥的认知了- -！ \n';
 			}
@@ -122,34 +122,34 @@ class Plugin extends Bot {
 	  		//空气质量PM2.5
 	  		var air_AQI25 = '';
 	  		if (data.result.realtime.air_quality.pm25 <= 50){
-				air_AQI25 = '<font color="info">优</font>';
+				air_AQI25 = '<font color="info" size=13>优</font>';
 			}else if(data.result.realtime.air_quality.pm25 > 50 && data.result.realtime.air_quality.pm25 <= 100){
-				air_AQI25 = '<font color="blue" size=4>良</font>';
+				air_AQI25 = '<font color="blue" size=14>良</font>';
 			}else if(data.result.realtime.air_quality.pm25 > 100 && data.result.realtime.air_quality.pm25 <= 150){
-				air_AQI25 = '<font color="danger" size=5>轻度污染</font>';
+				air_AQI25 = '<font color="danger" size=15>轻度污染</font>';
 			}else if(data.result.realtime.air_quality.pm25 > 150 && data.result.realtime.air_quality.pm25 <= 200){
-				air_AQI25 = '<font color="orange" size=6>中度污染</font>';
+				air_AQI25 = '<font color="orange" size=16>中度污染</font>';
 			}else if(data.result.realtime.air_quality.pm25 > 200 && data.result.realtime.air_quality.pm25 <= 300){
-				air_AQI25 = '<font color="red" size=7>重度污染</font>';
+				air_AQI25 = '<font color="red" size=17>重度污染</font>';
 			}else if(data.result.realtime.air_quality.pm25 > 300){
-				air_AQI25 = '<font color="red" size=8><b>严重污染</b></font>';
+				air_AQI25 = '**<font color="black" size=18>严重污染</font>**';
 			}else{
 				air_AQI25 = '这个空气质量已经超出了源哥的认知了- -！ \n';
 			}
 	  		//空气质量PM10
 	  		var air_AQI10 = '';
 	  		if (data.result.realtime.air_quality.pm10 <= 50){
-				air_AQI10 = '<font color="info">优</font>';
+				air_AQI10 = '<font color="info" size=13>优</font>';
 			}else if(data.result.realtime.air_quality.pm10 > 50 && data.result.realtime.air_quality.pm10 <= 100){
-				air_AQI10 = '<font color="blue" size=4>良</font>';
+				air_AQI10 = '<font color="blue" size=14>良</font>';
 			}else if(data.result.realtime.air_quality.pm10 > 100 && data.result.realtime.air_quality.pm10 <= 150){
-				air_AQI10 = '<font color="danger" size=5>轻度污染</font>';
+				air_AQI10 = '<font color="danger" size=15>轻度污染</font>';
 			}else if(data.result.realtime.air_quality.pm10 > 150 && data.result.realtime.air_quality.pm10 <= 200){
-				air_AQI10 = '<font color="orange" size=6>中度污染</font>';
+				air_AQI10 = '<font color="orange" size=16>中度污染</font>';
 			}else if(data.result.realtime.air_quality.pm10 > 200 && data.result.realtime.air_quality.pm10 <= 300){
-				air_AQI10 = '<font color="red" size=7>重度污染</font>';
+				air_AQI10 = '<font color="red" size=17>重度污染</font>';
 			}else if(data.result.realtime.air_quality.pm10 > 300){
-				air_AQI10 = '<font color="red" size=8><b>严重污染</b></font>';
+				air_AQI10 = '**<font color="black" size=18>严重污染</font>**';
 			}else{
 				air_AQI10 = '这个空气质量已经超出了源哥的认知了- -！ \n';
 			}
@@ -158,18 +158,19 @@ class Plugin extends Bot {
 
 **预报地点：**<font color="info"><b>${addr || ''}</b></font>
 
-> 气温：<font color="red"><b>${data.result.realtime.temperature}</b></font>℃
-> 体感温度：<font color="red"><b>${data.result.realtime.apparent_temperature}</b></font>℃
-> 气压：<font color="blue">${data.result.realtime.pressure/100}</font>hPa
-> 空气质量PM2.5：${data.result.realtime.air_quality.pm25}μg/m³ ${air_AQI25}
-> 空气质量PM10：${data.result.realtime.air_quality.pm10}μg/m³ ${air_AQI10}
-> 相对湿度：<font color="info">${data.result.realtime.humidity*100}</font>%
+> 气温：**<font color="red">${data.result.realtime.temperature}</font>℃**
+> 体感温度：**<font color="red">${data.result.realtime.apparent_temperature}</font>℃**
+> 气压：<font color="blue">${data.result.realtime.pressure/100}</font>**hPa**
+> 空气质量PM2.5：${data.result.realtime.air_quality.pm25}μg/m³ **${air_AQI25}**
+> 空气质量PM10：${data.result.realtime.air_quality.pm10}μg/m³ **${air_AQI10}**
+> 相对湿度：<font color="info">${data.result.realtime.humidity*100}</font>**%**
 > 风向：<font color="info">${wind_direction}</font>
 > 风速：${wind_power}
 
 **降雨提醒：**
-> <font color="info" size=5>${data.result.minutely.description.trim()}</font>
-> 降雨概率：<font color="blue" size=5>${data.result.minutely.probability}</font>
+> <font color="info" size=15>${data.result.minutely.description.trim()}</font>
+**降雨概率：**
+> <font color="blue" size=15>${data.result.minutely.probability}</font>
 
 
 **实时天气预报：**
